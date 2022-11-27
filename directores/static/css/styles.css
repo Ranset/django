@@ -1,0 +1,89 @@
+#title {
+  margin-top: 21px;
+}
+
+.ficha_director, .ficha_peli {
+  box-shadow: 0px 0px 19px rgba(33,37,41,0.43);
+  border-radius: 19px;
+  overflow: hidden;
+  border-style: none;
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+
+.row.ficha_peli {
+  max-width: 305px;
+  margin: 21px;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.colFoto {
+  padding: 0px;
+}
+
+.contFoto {
+  height: 191px;
+}
+
+.peliColFoto {
+  min-width: 306px;
+}
+
+.colDatos {
+  padding-left: 29px;
+  padding-top: 14px;
+}
+
+.name {
+  font-size: 33px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.country, .info {
+  font-size: 18px;
+  margin: 0;
+}
+
+.details {
+  font-size: 13px;
+  height: 63px;
+  overflow: hidden;
+  border-top-style: solid;
+  margin: 0;
+}
+
+.moreDetailsDir {
+  font-size: 13px;
+  font-style: italic;
+  color: rgb(108,108,108);
+  text-decoration: inherit;
+}
+
+body {
+  padding: 50px;
+}
+
+.hBio {
+  margin-top: 7px;
+}
+
+.pelisBG {
+  background: #e6e6e6;
+}
+
+.separador {
+  border-top-style: solid;
+}
+
+.colPelis {
+  min-width: 225px;
+  padding: 0px;
+}
+
+.detail_director {
+  margin: 0;
+  margin-right: 0px;
+}
+

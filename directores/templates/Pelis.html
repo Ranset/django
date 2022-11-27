@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% for pelicula in peliculas %}
+    <!-- Start: Ficha_foto_detalles -->
+    <div class="row detail_director">
+        <div class="col-3 col-sm-3 col-lg-2 col-xl-2 col-xxl-2 colFoto">
+            <!-- Start: Foto -->
+            <div class="container contFoto" id="fotoPeli" style="background: url(&quot;{% if not pelicula.poster %}{% static 'img/movie-icon-blue.jpg' %}{% else %}{{pelicula.poster}}{% endif %}&quot;) center / cover;">
+                <div></div>
+            </div><!-- End: Foto -->
+        </div><!-- Start: Datos -->
+        <div class="col colDatos">
+            <!-- Start: Nombre y Apellido -->
+            <p id="titulo" class="name"><strong>{{pelicula.titulo}}</strong><br></p><!-- End: Nombre y Apellido -->
+            <!-- Start: Pais -->
+            <p id="paisPeli" class="info">País: {{pelicula.pais}}</p><!-- End: Pais -->
+            <p id="directorPeli" class="info">Director: {{pelicula.director}}</p>
+            <!-- Start: duracion -->
+            <p id="duracion" class="info">Duración: {{pelicula.duracion}}mins</p><!-- End: duracion -->
+            <p id="genero" class="info">Género: {{genero}}</p>
+        </div><!-- End: Datos -->
+    </div><!-- End: Ficha_foto_detalles -->
+    <div class="col" style="border-top-style: solid;margin-top: 21px;">
+        <h3 id="sinopsisH" class="hBio">Sinopsis</h3>
+        <p id="sinopsisText">{{pelicula.sinopsis}}</p>
+    </div>
+{% endfor %}
+{% endblock content %}

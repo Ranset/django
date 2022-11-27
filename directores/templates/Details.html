@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Start: Ficha_foto_detalles -->
+    <div class="row detail_director">
+        <div class="col-3 col-sm-3 col-lg-2 col-xl-2 col-xxl-2 colFoto">
+            <!-- Start: Foto -->
+            <div class="container contFoto" style="background: url(&quot;{% if not foto %}{% static 'img/user-icon-blue.jpg' %}{% else %}{{foto}}{% endif %}&quot;) center / cover;">
+                <div></div>
+            </div><!-- End: Foto -->
+        </div><!-- Start: Datos -->
+        <div class="col colDatos">
+            <!-- Start: Nombre y Apellido -->
+            <p class="name">{{nombre}} {{apellido}}</p><!-- End: Nombre y Apellido -->
+            <!-- Start: Pais -->
+            <p class="info">{{fechas}}</p><!-- End: Pais -->
+            <!-- Start: Pais -->
+            <p class="info">{{pais}}</p><!-- End: Pais -->
+        </div><!-- End: Datos -->
+    </div><!-- End: Ficha_foto_detalles -->
+    <div class="col" style="border-top-style: solid;margin-top: 21px;">
+        <h3 class="hBio">Biografía</h3>
+        <p>{{bio}}<br><br></p>
+    </div>
+    <div class="row pelisBG separador">
+        <div class="col">
+            <h3 class="hBio">Películas</h3>
+        </div>
+    </div>
+    <div class="row pelisBG">
+        {% for pelicula in peliculas %}
+            <!-- Start: Duplicate this -->
+        <div class="col d-flex justify-content-center colPelis">
+            <!-- Start: Ficha_foto_detalles -->
+            <div class="row ficha_peli">
+                <div class="col-3 col-sm-3 col-lg-2 col-xl-2 col-xxl-2 colFoto peliColFoto">
+                    <!-- Start: Foto -->
+                    <div class="container contFoto" style="background: url(&quot;{% if not pelicula.poster %}{% static 'img/movie-icon-blue.jpg' %}{% else %}{{pelicula.poster}}{% endif %}&quot;) center / cover;">
+                        <div></div>
+                    </div><!-- End: Foto -->
+                </div><!-- Start: Datos -->
+                <div class="col colDatos">
+                    <!-- Start: Título -->
+                    <p class="name peliName" style="font-size: 16px;">{{pelicula.titulo}}</p><!-- End: Título -->
+                    <!-- Start: Pais -->
+                    <p class="country">País: {{pelicula.pais}}</p><!-- End: Pais -->
+                    <!-- Start: Duración -->
+                    <p class="country">Duración: {{pelicula.duracion}}mins</p><!-- End: Duración -->
+                    <a class="moreDetailsDir" href="{% url 'pelicula' pelicula.id %}"><em>más detalles...</em><br></a>
+                </div><!-- End: Datos -->
+            </div><!-- End: Ficha_foto_detalles -->
+        </div><!-- End: Duplicate this -->
+        {% empty %}
+            <p>No tiene películas aún</p>
+        {% endfor %}
+        
+    </div>
+{% endblock content %}

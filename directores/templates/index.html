@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row" id="title">
+        <div class="col" style="padding: 0;">
+            <div class="container" style="padding: 0;">
+                <h1>Directores</h1>
+            </div>
+        </div>
+
+    {% for director in directores %}
+        </div><!-- Start: Ficha DIrector -->
+        <div class="row ficha_director">
+            <div class="col-3 col-sm-3 col-lg-2 col-xl-2 col-xxl-2 colFoto">
+                <!-- Start: Foto -->
+                <div class="container contFoto" style="background: url(&quot;{% if not director.foto %}{% static 'img/user-icon-blue.jpg' %}{% else %}{{director.foto}}{% endif %}&quot;) center / cover;">
+                    <div></div>
+                </div><!-- End: Foto -->
+            </div><!-- Start: Datos -->
+            <div class="col colDatos">
+                <!-- Start: Nombre y Apellido -->
+                <p class="name">{{director.nombre}} {{director.apellido}}</p><!-- End: Nombre y Apellido -->
+                <!-- Start: Pais -->
+                <p class="country">{{director.pais}}</p><!-- End: Pais -->
+                <!-- Start: Detalles -->
+                <p class="details">{{director.biografia}}<br></p><!-- End: Detalles -->
+                <a class="moreDetailsDir" href="{% url 'director' director.id %}"><em>más detalles...</em><br></a>
+            </div><!-- End: Datos -->
+        </div><!-- End: Ficha DIrector -->
+    {% empty %}
+        <p><h1>No hay datos de directores</h1></p>
+    {% endfor %}
+
+{% endblock content %}

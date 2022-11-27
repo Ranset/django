@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row" id="title">
+        <div class="col" style="padding: 0;">
+            <div class="container" style="padding: 0;">
+                <h1>Directores</h1>
+            </div>
+        </div>
+    </div><!-- Start: Ficha DIrector -->
+    <div class="row ficha_director">
+        <div class="col-3 col-sm-3 col-lg-2 col-xl-2 col-xxl-2 colFoto">
+            <!-- Start: Foto -->
+            
+            <div class="container contFoto" style="background: url(&quot;{% static 'img/user-icon-blue.jpg' %}&quot;) center / cover;">
+                <div></div>
+            </div><!-- End: Foto -->
+        </div><!-- Start: Datos -->
+        <div class="col colDatos">
+            <!-- Start: Nombre y Apellido -->
+            <p class="name">Jhon Doe</p><!-- End: Nombre y Apellido -->
+            <!-- Start: Pais -->
+            <p class="country">EE.UU</p><!-- End: Pais -->
+            <!-- Start: Detalles -->
+            <p class="details">El proyecto tutorial solo tiene una aplicación;&nbsp;polls. En proyectos reales de Django, puede haber cinco, diez, veinte o más aplicaciones. ¿Cómo diferencia Django los nombres de las URLs entre ellos? Por ejemplo, la aplicación&nbsp;polls&nbsp;tiene una vista&nbsp;detail, como la podría tener también una aplicación en el mismo proyecto que es para un blog. ¿Cómo hacer para que Django sepa cual vista de aplicaciones crear para una URL cuando se utiliza la etiqueta de plantilla<br></p><!-- End: Detalles -->
+            <a class="moreDetailsDir" href="{% url 'director' nro %}"><em>más detalles...</em><br></a>
+        </div><!-- End: Datos -->
+    </div><!-- End: Ficha DIrector -->
+    <!-- Start: Ficha DIrector 2 -->
+    <div class="row ficha_director">
+        <div class="col-3 col-sm-3 col-lg-2 col-xl-2 col-xxl-2 colFoto">
+            <!-- Start: Foto -->
+            <div class="container contFoto" style="background: url(&quot;{% static 'img/user-icon-blue.jpg' %}&quot;) center / cover;">
+                <div></div>
+            </div><!-- End: Foto -->
+        </div><!-- Start: Datos -->
+        <div class="col colDatos">
+            <!-- Start: Nombre y Apellido -->
+            <p class="name">Jhon Doe</p><!-- End: Nombre y Apellido -->
+            <!-- Start: Pais -->
+            <p class="country">EE.UU</p><!-- End: Pais -->
+            <!-- Start: Detalles -->
+            <p class="details">El proyecto tutorial solo tiene una aplicación;&nbsp;polls. En proyectos reales de Django, puede haber cinco, diez, veinte o más aplicaciones. ¿Cómo diferencia Django los nombres de las URLs entre ellos? Por ejemplo, la aplicación&nbsp;polls&nbsp;tiene una vista&nbsp;detail, como la podría tener también una aplicación en el mismo proyecto que es para un blog. ¿Cómo hacer para que Django sepa cual vista de aplicaciones crear para una URL cuando se utiliza la etiqueta de plantilla<br></p><!-- End: Detalles -->
+            <p class="moreDetailsDir">más detalles...</p>
+        </div><!-- End: Datos -->
+    </div><!-- End: Ficha DIrector 2 -->
+{% endblock content %}
